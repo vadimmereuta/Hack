@@ -1,0 +1,119 @@
+/* Общий стиль для контейнера */
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #f9eaff, #e6f7ff);
+    font-family: 'Arial', sans-serif;
+    padding: 20px; /* Добавляем отступы для маленьких экранов */
+}
+
+/* Контейнер для вопросов */
+.question-container {
+    text-align: center;
+    max-width: 600px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ffd1dc;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%; /* Контейнер занимает всю ширину */
+    box-sizing: border-box; /* Учитываем отступы внутри элемента */
+}
+
+/* Эффект при наведении */
+.question-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Вопрос */
+.question-container h1 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+/* Варианты ответов */
+.question-container label {
+    display: block;
+    background: #fef6ff;
+    padding: 10px 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 1px solid #ffd1dc;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1rem; /* Размер шрифта для удобства */
+}
+
+/* Эффект при наведении на вариант ответа */
+.question-container label:hover {
+    background: #ffe4eb;
+    box-shadow: 0 4px 15px rgba(255, 209, 220, 0.5);
+}
+
+/* Радиокнопка */
+.question-container input[type="radio"] {
+    display: none;
+}
+
+/* Активный вариант ответа */
+.question-container input[type="radio"]:checked + label {
+    background: #ffd1dc;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(255, 209, 220, 0.7);
+    border: 1px solid #ff8a9a;
+}
+
+/* Благодарственное сообщение */
+.main h1 {
+    font-size: 2rem;
+    color: #444;
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 20px;
+    border: 2px solid #ffd1dc;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Адаптация под мобильные устройства */
+@media (max-width: 768px) {
+    .question-container {
+        padding: 20px; /* Уменьшаем внутренние отступы */
+    }
+
+    .question-container h1 {
+        font-size: 1.5rem; /* Уменьшаем размер заголовка */
+    }
+
+    .question-container label {
+        font-size: 0.9rem; /* Уменьшаем размер текста вариантов */
+        padding: 10px; /* Сокращаем отступы */
+    }
+
+    .main h1 {
+        font-size: 1.8rem; /* Уменьшаем размер текста благодарности */
+        padding: 15px 20px; /* Уменьшаем отступы */
+    }
+}
+
+@media (max-width: 480px) {
+    .question-container h1 {
+        font-size: 1.2rem; /* Ещё меньше заголовок для узких экранов */
+    }
+
+    .question-container label {
+        font-size: 0.8rem; /* Уменьшаем текст вариантов */
+        padding: 8px; /* Уменьшаем внутренние отступы */
+    }
+
+    .main h1 {
+        font-size: 1.5rem; /* Ещё меньше текст благодарности */
+        padding: 10px 15px; /* Сокращаем отступы */
+    }
+}
